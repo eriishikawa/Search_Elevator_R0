@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Search_Elevator_R0</string>
+
+    <string name="hello_world">駅名入力</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_result">ResultActivity</string>
+</resources>
