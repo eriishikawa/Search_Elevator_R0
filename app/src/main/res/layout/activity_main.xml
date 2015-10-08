@@ -1,82 +1,81 @@
-<RelativeLayou xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
-<LinearLayout
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical">
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView"
-        android:layout_marginTop="15dp"/>
-    />
-
-    <EditText
+    <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText"
-        android:textSize="35dp"
-       android:background="@color/gray"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="15dp"/>
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+        <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            android:layout_marginTop="15dp"/>
+        />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText"
+            android:textSize="20dp"
+            android:background="@color/gray"
+            android:layout_below="@+id/textView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="15dp"/>
 
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="検索"
-        android:background="@color/pink"
-        android:textColor="@color/white"
-        android:id="@+id/button"
-        android:layout_below="@+id/editText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="15dp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="検索"
+            android:background="@color/pink"
+            android:textColor="@color/white"
+            android:id="@+id/button"
+            android:layout_below="@+id/editText"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="15dp"/>
 
-</LinearLayout>
-  <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="350dp"
-        android:orientation="vertical" >
 
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="周辺の駅"
-        android:id="@+id/textView2"
-        android:layout_below="@+id/button" />
 
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="周辺検索"
-        android:id="@+id/textView3"
- />
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="周辺の駅"
+            android:id="@+id/textView2"
+            android:layout_below="@+id/button" />
 
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="周辺検索"
-        android:id="@+id/textView4" />
-      <TextView
-          android:layout_width="fill_parent"
-          android:layout_height="wrap_content"
-          android:text="周辺検索"
-          android:id="@+id/textView5" />
-      <TextView
-          android:layout_width="fill_parent"
-          android:layout_height="wrap_content"
-          android:text="周辺検索"
-          android:id="@+id/textView6" />
-      <TextView
-          android:layout_width="fill_parent"
-          android:layout_height="wrap_content"
-          android:text="周辺検索"
-          android:id="@+id/textView7" />
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="周辺検索"
+            android:textSize="20dp"
+            android:id="@+id/textView3"
+            />
 
-</LinearLayout></RelativeLayou >
+        <!--<TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="周辺検索"
+            android:id="@+id/textView4" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="周辺検索"
+            android:id="@+id/textView5" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="周辺検索"
+            android:id="@+id/textView6" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="周辺検索"
+            android:id="@+id/textView7" />-->
+
+    </LinearLayout></RelativeLayout >

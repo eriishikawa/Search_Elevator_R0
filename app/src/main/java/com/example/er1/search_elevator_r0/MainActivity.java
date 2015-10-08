@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
     private void setViews() {
         edit_text_search = (EditText)findViewById(R.id.editText);
         button_search = (Button)findViewById(R.id.button);
-        result_around_station = (TextView)findViewById(R.id.textView3);
+      //  result_around_station = (TextView)findViewById(R.id.textView3);
 
     }
 
@@ -215,7 +215,7 @@ public class MainActivity extends AppCompatActivity {
                             //-------------------------
                             //抜き出した要素の中から順番に、子要素を抜く出す
                             NodeList list = gchildren.item(i).getChildNodes();
-                            for (int j = 0, k = 0; j < list.getLength(); j++)
+                            for (int j = 0, k = 0,r=0; j < list.getLength(); j++)
                             {
 
                                 //抜き出した子要素の中から順番に取りだし、空白であれば登録しない
@@ -235,7 +235,7 @@ public class MainActivity extends AppCompatActivity {
                                     if (text.equals("line"))
                                     {
                                         Log.v("hello_line", "路線：" + value + ":");
-//                                        output_data += "路線：" + value+"/";
+            //                            output_data [r]= "路線：" + value+"/";
                                     }
 
                                     if (text.equals("distanceM"))
@@ -252,7 +252,7 @@ public class MainActivity extends AppCompatActivity {
                                 }
                             }
                         }
-                       Toast toast = Toast.makeText(getApplicationContext(), output_data[0],Toast.LENGTH_LONG);
+                      Toast toast = Toast.makeText(getApplicationContext(), output_data[0],Toast.LENGTH_LONG);
                         toast.setGravity(Gravity.CENTER_VERTICAL | Gravity.LEFT, 0, 0);
                         toast.show();
 
