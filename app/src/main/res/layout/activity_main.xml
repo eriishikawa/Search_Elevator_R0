@@ -57,6 +57,17 @@
             android:id="@+id/textView3"
             />
 
+
+        <Button
+            android:layout_marginTop="15dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="周辺検索"
+            android:textSize="20dp"
+            android:id="@+id/stationlist"
+            />
+
+
         <!--<TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"

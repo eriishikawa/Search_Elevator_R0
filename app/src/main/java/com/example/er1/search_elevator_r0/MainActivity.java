@@ -24,7 +24,6 @@ import org.xml.sax.SAXException;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.logging.LogRecord;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -36,24 +35,25 @@ public class MainActivity extends AppCompatActivity {
     private TextView result_around_station;
     String search_station_name;
 
+    private Button stationlistView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         setViews();
         setClickListener();
-        double[] a;
-        a = getLocation();
-        Log.v("現在地-----------------",""+a[0]+","+a[1] );
         getListDataApi ();
+
     }
 
     private void setViews() {
         edit_text_search = (EditText)findViewById(R.id.editText);
         button_search = (Button)findViewById(R.id.button);
-      //  result_around_station = (TextView)findViewById(R.id.textView3);
 
+        stationlistView = (Button)findViewById(R.id.stationlist);
     }
 
     View.OnClickListener search_button_listener = new View.OnClickListener() {
@@ -63,14 +63,38 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+
+    private View.OnClickListener stationlist_listener = new View.OnClickListener(){
+        public void onClick(View v) {
+            station_list_Click();
+        }
+    };
+
+
+
     private void search(String search_station_name) {
         Intent intent = new Intent(this, ResultActivity.class);
         intent.putExtra("searchSta",search_station_name);
         startActivity(intent);
     }
 
+    /**
+     *
+     */
+    private void station_list_Click() {
+
+        Intent intent = new Intent(this, NearStationActivity.class);
+        startActivity(intent);
+    }
+
+
     private void setClickListener() {
         button_search.setOnClickListener(search_button_listener);
+
+        stationlistView.setOnClickListener(stationlist_listener);
+
+
+
     }
 
     /**
@@ -83,8 +107,13 @@ public class MainActivity extends AppCompatActivity {
 
             double[] gspinfo = getLocation();
 
-            if (gspinfo == null) {
-                Log.v("hello", "couldn't get location data.");
+
+            if (gspinfo[0] == 0.0 && gspinfo[1] == 0.0 ) {
+
+            /*    Toast toast = Toast.makeText(getApplicationContext(), "couldn't get location data",Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.CENTER_VERTICAL | Gravity.LEFT, 0, 0);
+                toast.show();
+*/
 
             } else {
 
@@ -93,6 +122,8 @@ public class MainActivity extends AppCompatActivity {
                 double lon = gspinfo[1];
 
                 String api_url = "http://map.simpleapi.net/stationapi?y="+lat+"&x="+lon;
+
+                Log.d("hello_test",api_url+"");
                 Thread mythread = new Thread(new MythreadGetListData(api_url));
                 mythread.start();
 
@@ -102,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
     /**
      *  現在地の位置情報を取得する
      * @return
@@ -123,11 +155,14 @@ public class MainActivity extends AppCompatActivity {
                     .isProviderEnabled(LocationManager.NETWORK_PROVIDER);
             if (!isGPSEnabled && !isNetworkEnabled) {
                 // no network provider is enabled
+
             } else {
+
                 if (isNetworkEnabled) {
                     if (locationManager != null) {
-                        location = locationManager
-                                .getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+                        Log.d("GPS_Hee",22+"");
+
+                        location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
                         if (location != null) {
                             double lat = location.getLatitude();
                             double lon = location.getLongitude();
@@ -137,9 +172,11 @@ public class MainActivity extends AppCompatActivity {
 
                         }
                     }
-                }
-                // if GPS Enabled get lat/long using GPS Services
-                if (isGPSEnabled) {
+                } else if (isGPSEnabled) {
+                    // if GPS Enabled get lat/long using GPS Services
+
+                    Log.d("GPS_Hee",11+"");
+
                     if (location == null) {
                         if (locationManager != null) {
                             location = locationManager
