@@ -289,9 +289,10 @@ public class MainActivity extends AppCompatActivity {
                                 }
                             }
                         }
-                      Toast toast = Toast.makeText(getApplicationContext(), output_data[0],Toast.LENGTH_LONG);
+            /*          Toast toast = Toast.makeText(getApplicationContext(), output_data[0],Toast.LENGTH_LONG);
                         toast.setGravity(Gravity.CENTER_VERTICAL | Gravity.LEFT, 0, 0);
                         toast.show();
+                        */
 
                 //       result_around_station.setText(bais);
                     } catch (IOException e) {
