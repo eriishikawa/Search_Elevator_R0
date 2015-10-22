@@ -1,4 +1,4 @@
-package com.example.er1.search_elevator_r0;
+package com.ishikawa.er1.search_elevator_r0;
 
 import android.content.Intent;
 import android.location.Location;
@@ -16,6 +16,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.ishikawa.er1.search_elevator_r0.R;
 
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;

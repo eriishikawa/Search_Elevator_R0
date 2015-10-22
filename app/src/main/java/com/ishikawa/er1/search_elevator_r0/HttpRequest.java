@@ -1,4 +1,4 @@
-package com.example.er1.search_elevator_r0;
+package com.ishikawa.er1.search_elevator_r0;
 
 import java.io.BufferedReader;
 import java.io.IOException;
